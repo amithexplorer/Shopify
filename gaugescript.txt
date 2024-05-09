@@ -1,0 +1,97 @@
+<script>
+$(document).ready(function() {
+setTimeout(function() {
+    $('.comparemorphea9181128032_details_item_content .wrapperr').each(function() {
+      var gaugeValue = $(this).attr('gau-attr');
+      var opts = {
+        angle: 0,
+        lineWidth: 0.3,
+        radiusScale: 0.9,
+        pointer: {
+          length: 0.42,
+          strokeWidth: 0.029,
+          color: '#000000'
+        },
+        limitMax: true,
+        limitMin: true,
+        colorStart: '#6F6EA0',
+        colorStop: '#C0C0DB',
+        strokeColor: '#EEEEEE',
+        generateGradient: true,
+        highDpiSupport: true,
+        staticZones: [
+          { strokeStyle: "#F03E3E", min: 1, max: 2 },
+          { strokeStyle: "#FFDD00", min: 2, max: 3 },
+          { strokeStyle: "#90EE90", min: 3, max: 4 },
+          { strokeStyle: "#30B32D", min: 4, max: 5 },
+        ],
+        staticLabels: {
+          font: "10px sans-serif",
+          labels: [1, 2, 3, 4,5],
+          color: "#000000",
+          fractionDigits: 0
+        },
+      };
+
+      var target = $(this).find('canvas')[0];
+      var gauge = new Gauge(target).setOptions(opts);
+      gauge.maxValue = 5;
+      gauge.setMinValue(1);
+      gauge.animationSpeed = 50;
+      gauge.set(gaugeValue);
+    });
+ }, 100);
+
+
+
+  $('.tags-button-wrapper').click(function() {
+setTimeout(function() {
+    $('.comparemorphea9181128032_details_item_content .wrapperr').each(function() {
+      var gaugeValue = $(this).attr('gau-attr');
+      var opts = {
+        angle: 0,
+        lineWidth: 0.3,
+        radiusScale: 0.9,
+        pointer: {
+          length: 0.42,
+          strokeWidth: 0.029,
+          color: '#000000'
+        },
+        limitMax: true,
+        limitMin: true,
+        colorStart: '#6F6EA0',
+        colorStop: '#C0C0DB',
+        strokeColor: '#EEEEEE',
+        generateGradient: true,
+        highDpiSupport: true,
+        staticZones: [
+          { strokeStyle: "#F03E3E", min: 1, max: 2 },
+          { strokeStyle: "#FFDD00", min: 2, max: 3 },
+          { strokeStyle: "#90EE90", min: 3, max: 4 },
+          { strokeStyle: "#30B32D", min: 4, max: 5 },
+        ],
+        staticLabels: {
+          font: "10px sans-serif",
+          labels: [1, 2, 3, 4,5],
+          color: "#000000",
+          fractionDigits: 0
+        },
+      };
+
+      var target = $(this).find('canvas')[0];
+      var gauge = new Gauge(target).setOptions(opts);
+      gauge.maxValue = 5;
+      gauge.setMinValue(1);
+      gauge.animationSpeed = 50;
+      gauge.set(gaugeValue);
+    });
+ }, 100);
+  });
+});
+</script>  
+
+
+<div class="wrapperr" gau-attr="{{ product.metafields.custom.nombre_d_toiles }}">
+  <!-- Gauge chart canvas -->
+  <canvas id="foo"></canvas>
+</div>
